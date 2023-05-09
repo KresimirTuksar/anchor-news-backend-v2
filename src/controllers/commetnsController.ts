@@ -32,7 +32,8 @@ export const addComment = async (req: Request, res: Response) => {
 
 export const deleteComment = async (req: CustomRequest, res: Response) => {
     try {
-      const { newsPostId, commentId } = req.params;
+      const { newsPostId } = req.params;
+      const {commentId} = req.body;
 
       // Find the news post by ID
       const newsPost = await NewsPost.findById(newsPostId);
